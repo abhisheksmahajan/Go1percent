@@ -27,7 +27,9 @@ const pageCommands = {
       
      },
      login(username,password){
-        return this.setValue('@userName',username)
+        return this.waitForElementVisible('@userName',1000)
+        .setValue('@userName',username)
+        .waitForElementVisible('@password',1000)
         .setValue('@password',password)
         .click('@submit')
      }

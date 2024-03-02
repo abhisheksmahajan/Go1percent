@@ -122,7 +122,7 @@ it('Verify remember me checkbox is selected during login',function(browser){
     
     
 })
-it('Verify that login fails with credentials and an alert message is displayed',function(browser){
+it('Verify successful login with valid credentials',function(browser){
     
     LoginPage.login('testadmin','testadmin')
     LoginPage.assert.urlContains('/my-dashboard');

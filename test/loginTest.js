@@ -6,37 +6,38 @@ describe('Login Functinality',function(){
     before(function(){ 
 
     LoginPage.navigate()
-    browser.windowMaximize()
+    browser.windowMaximize()                
+   // browser.resizeWindow(1400, 1000) 
+ 
   });
    
     after(async(browser)=>browser.quit());
 
 it(' Verify "Go1Percent" logo, carousel images, carousel caption and the footer message ',function(browser){
     
-    LoginPage.expect.element('@logo').visible
-    LoginPage.expect.element('@carouselImg').visible
-    LoginPage.expect.element('@carousalCaption').visible
-    LoginPage.expect.element('@footer').visible
+    LoginPage.expect.element('@logo').to.be.visible
+    LoginPage.expect.element('@carouselImg').to.be.visible
+    LoginPage.expect.element('@carousalCaption').to.be.visible
+    LoginPage.expect.element('@footer').to.be.visible
 
-
-    
 })
+ 
 it(' Verify that tag line with text "Get 1% Better Everyday" is displayed ',function(browser){
     
-    LoginPage.expect.element('@carousalCaption').visible
+    LoginPage.expect.element('@carousalCaption').to.be.visible
     
     
 })
 it(' Verify that carousel image changes while clicking on carousel button ',function(browser){
     
     LoginPage.clickOnSlider();
-    LoginPage.expect.element('@resultImg').visible
+    LoginPage.expect.element('@resultImg').to.be.visible
     
     
 })
 it('Verify that login page heading contains text "Sign in to Go 1%" is displayed',function(browser){
     
-    LoginPage.expect.element('@title').visible
+    LoginPage.expect.element('@title').to.be.visible
     
     
 })
@@ -70,10 +71,6 @@ it('Verify clicking on the "Terms of Use" link opens a new page with the terms o
         .assert.urlContains('/terms-of-use');
         this.switchWindow(originalHandle);
     })
-    
-
-    
-    
 })
 it('Verify clicking on the "privacy Policy" link opens a new page with the terms of use ',function(browser){
     LoginPage.getTitle(function(title) {
@@ -91,9 +88,7 @@ it('Verify clicking on the "privacy Policy" link opens a new page with the terms
 it('Verify that login fails with invalid credentials and an alert message is displayed',function(browser){
     
     LoginPage.login('abcd@121','abcd@123')
-    LoginPage.expect.element('@erromsg').visible;
-    
-    
+    LoginPage.expect.element('@erromsg').to.be.visible;
     
 })
  
@@ -104,7 +99,7 @@ it('Verify the forgot Password functionality',function(browser){
         })
 
             LoginPage.doForgotPassword();
-            LoginPage.expect.element('.pf-c-alert__title.kc-feedback-text').visible
+            LoginPage.expect.element('.pf-c-alert__title.kc-feedback-text').to.be.visible
             
             
             
@@ -119,17 +114,14 @@ it('Verify remember me checkbox is selected during login',function(browser){
     LoginPage.clickonRememberme()
     browser.pause(2000)
    // LoginPage.expect.element('@remaberMeCheckbox').to.be.selected
-    
+   LoginPage.expect.element('#rememberMe').to.be.selected.before(100)
     
 })
 it('Verify successful login with valid credentials',function(browser){
     
-    LoginPage.login('testadmin','testadmin')
+    LoginPage.login('testemployee','testemployee')
     LoginPage.assert.urlContains('/my-dashboard');
-
-    
-    
-    
+  
 })
 
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
+<testsuites errors="1"
             failures="1"
-            tests="12">
+            tests="3">
 
   <testsuite name="loginTest"
-    errors="0" failures="1" hostname="" id="" package="loginTest" skipped="0"
-    tests="12" time="27.51" timestamp="">
+    errors="1" failures="1" hostname="" id="" package="loginTest" skipped="9"
+    tests="3" time="24.11" timestamp="">
   
-    <testcase name=" Verify &#34;Go1Percent&#34; logo, carousel images, carousel caption and the footer message " classname="loginTest" time="1.004" assertions="4">
+    <testcase name=" Verify &#34;Go1Percent&#34; logo, carousel images, carousel caption and the footer message " classname="loginTest" time="0.9620" assertions="4">
 
     
 
@@ -18,84 +18,102 @@
     
     </testcase>
   
-    <testcase name=" Verify that tag line with text &#34;Get 1% Better Everyday&#34; is displayed " classname="loginTest" time="0.03600" assertions="1">
+    <testcase name=" Verify that tag line with text &#34;Get 1% Better Everyday&#34; is displayed " classname="loginTest" time="0.03700" assertions="1">
 
     
     </testcase>
   
-    <testcase name=" Verify that carousel image changes while clicking on carousel button " classname="loginTest" time="0.1450" assertions="2">
+    <testcase name=" Verify that carousel image changes while clicking on carousel button " classname="loginTest" time="10.42" assertions="2">
+
+      <failure message="Expected element @resultImg &lt;#myCarousel &gt; div &gt; div:nth-child(4) &gt;img&gt; to be visible - expected &#34;visible&#34; but got: &#34;not visible&#34; (5275ms)">    at DescribeInstance.&lt;anonymous&gt; (/home/knoldus/IdeaProjects/Go1percent/test/loginTest.js:34:22)</failure>
 
     
-
-    
-    </testcase>
-  
-    <testcase name="Verify that login page heading contains text &#34;Sign in to Go 1%&#34; is displayed" classname="loginTest" time="0.02800" assertions="1">
-
-    
-    </testcase>
-  
-    <testcase name="Verify that clicking on the Microsoft logo redirects to the Microsoft login page " classname="loginTest" time="0.9960" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Verify that specific text between login options is present on the web page" classname="loginTest" time="0.03100" assertions="1">
-
-    
-    </testcase>
-  
-    <testcase name="Verify clicking on the &#34;Terms of Use&#34; link opens a new page with the terms of use " classname="loginTest" time="0.4920" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Verify clicking on the &#34;privacy Policy&#34; link opens a new page with the terms of use " classname="loginTest" time="0.7000" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Verify that login fails with invalid credentials and an alert message is displayed" classname="loginTest" time="0.7500" assertions="3">
-
-    
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Verify the forgot Password functionality" classname="loginTest" time="1.034" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Verify remember me checkbox is selected during login" classname="loginTest" time="2.095" assertions="1">
-
-    
-    </testcase>
-  
-    <testcase name="Verify successful login with valid credentials" classname="loginTest" time="5.867" assertions="3">
-
-    
-
-      <failure message="Testing if the URL contains &#39;/my-dashboard&#39; in 5000ms - expected &#34;contains &#39;/my-dashboard&#39;&#34; but got: &#34;https://auth.go1percent.com/auth/realms/nashtech/login-actions/authenticate?execution=cb36f633-2f8f-4b2b-b694-30cc71983e40&amp;client_id=leaderboard-qa-ui&amp;tab_id=phJMQFtmZ5Q&#34; (5420ms)">    at DescribeInstance.&lt;anonymous&gt; (/home/knoldus/IdeaProjects/Go1percent/test/loginTest.js:128:22)</failure>
-
+    <error message="Expected element @resultImg &lt;#myCarousel &gt; div &gt; div:nth-child(4) &gt;img&gt; to be visible - expected [32m&#34;visible&#34;[39m but got: [31m&#34;not visible&#34;[39m[90m (5275ms)[39m" type="error"><![CDATA[
+    Error
+    at Command.executeCommand (/home/knoldus/IdeaProjects/Go1percent/node_modules/nightwatch/lib/page-object/command-wrapper.js:281:22)
+    at Object.element (/home/knoldus/IdeaProjects/Go1percent/node_modules/nightwatch/lib/page-object/command-wrapper.js:86:27)
+    at DescribeInstance.&lt;anonymous&gt; (/home/knoldus/IdeaProjects/Go1percent/test/loginTest.js:34:22)
+    at Context.call (/home/knoldus/IdeaProjects/Go1percent/node_modules/nightwatch/lib/testsuite/context.js:515:35)
+    at TestCase.run (/home/knoldus/IdeaProjects/Go1percent/node_modules/nightwatch/lib/testsuite/testcase.js:58:31)
+    at Runnable.__runFn (/home/knoldus/IdeaProjects/Go1percent/node_modules/nightwatch/lib/testsuite/index.js:839:80)
+    at Runnable.run (/home/knoldus/IdeaProjects/Go1percent/node_modules/nightwatch/lib/testsuite/runnable.js:126:21)
+    at TestSuite.executeRunnable (/home/knoldus/IdeaProjects/Go1percent/node_modules/nightwatch/lib/testsuite/index.js:1000:49)
+    at TestSuite.handleRunnable (/home/knoldus/IdeaProjects/Go1percent/node_modules/nightwatch/lib/testsuite/index.js:1015:33)
+    at /home/knoldus/IdeaProjects/Go1percent/node_modules/nightwatch/lib/testsuite/index.js:839:21
+    ]]></error>
     
     </testcase>
   
 
   
+    <system-err>
+       TimeoutError
+   An error occurred while running .click() command on &lt;Element [name=@corousalSlider]&gt;: element click intercepted: Element is not clickable at point (572, 853)
+  (Session info: chrome=121.0.6167.184)
+    {&#34;error&#34;:{&#34;name&#34;:&#34;ElementClickInterceptedError&#34;,&#34;remoteStacktrace&#34;:&#34;&#34;},&#34;status&#34;:-1,&#34;value&#34;:null}
+
+    Error location:
+    /home/knoldus/IdeaProjects/Go1percent/test/loginTest.js:33
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     31 | it(&#39; Verify that carousel image changes while clicking on carousel button &#39;,function(browser){
+     32 |     
+     33 |     LoginPage.clickOnSlider(); 
+     34 |     LoginPage.expect.element(&#39;@resultImg&#39;).to.be.visible
+     35 |     
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    </system-err>
+  
 
     
 
+  
+    
+    <testcase
+      name="Verify that login page heading contains text &#34;Sign in to Go 1%&#34; is displayed" classname="loginTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Verify that clicking on the Microsoft logo redirects to the Microsoft login page " classname="loginTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Verify that specific text between login options is present on the web page" classname="loginTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Verify clicking on the &#34;Terms of Use&#34; link opens a new page with the terms of use " classname="loginTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Verify clicking on the &#34;privacy Policy&#34; link opens a new page with the terms of use " classname="loginTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Verify that login fails with invalid credentials and an alert message is displayed" classname="loginTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Verify the forgot Password functionality" classname="loginTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Verify remember me checkbox is selected during login" classname="loginTest">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Verify successful login with valid credentials" classname="loginTest">
+      <skipped />
+    </testcase>
+    
   
   </testsuite>
 </testsuites>
